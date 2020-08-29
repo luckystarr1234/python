@@ -15,7 +15,7 @@ def multiply(a, b):
         raise TypeError('Second input parameter must be an int. Instead it is ' + str(type2))
 
     return a * b
-
+# END OF FIRST PROGRAM
 
 def divide(a, b):
     type1 = type(a)
