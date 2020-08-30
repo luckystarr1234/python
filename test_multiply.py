@@ -1,32 +1,28 @@
 from advanced import multiply
 
 # DRY - Don't Repeat Yourself
+import pytest
 
 
-def test_multiply_char():
- assert multiply(56245, 58000) == 114245
+from add import add
 
+# DRY - Don't Repeat Yourself
+# Annotation
 
-def test_multiply_letter():
- return_value = multiply(2, 0.5)
- print(type(return_value))
- assert return_value == 1
+@pytest.mark.parametrize("a, b, expected", [
+    (1, 1, 1),
+    (462, 543, 250866),
+    (-4, 6, -24),
+    (None, None, None),
+    (None, 46, 46),
+    (70, None, 70),
+    (2.4, 5.8, 13.92),
+    (5j + 6, 8j + 9, 40j**2 + 93j + 54 ),
+    (2**3, 9**2 ,648 )
+])
+def test_multiply(a, b, expected):
+    assert multiply(a, b) == expected
 
-
-def test_multiply_none():
- return_value = multiply(-4, 6)
- print(type(return_value))
- assert return_value == -24
-
-def test_multiply_decimal():
- return_value = multiply(43, -0.65)
- print(type(return_value))
- assert return_value == -27.95
-
-def test_multiply_string():
- return_value = multiply('36', 47)
- print(type(return_value))
- assert return_value == 1692
 
 #//////////////////////////////////////////////
 
@@ -38,21 +34,21 @@ def test_divide_char():
  assert divide(56245, 58000) == 114245
 
 def test_divide_letter():
- return_value = divide(4.5, 2)
+ return_value = divide(4, 2)
  print(type(return_value))
- assert return_value == 2.25
+ assert return_value == 2
 
 def test_divide_none():
- return_value = divide(-8, 4)
+ return_value = divide(8, 4)
  print(type(return_value))
  assert return_value == -2
 
 def test_divide_decimal():
- return_value = divide(60, -0.5)
+ return_value = divide(60, 5)
  print(type(return_value))
- assert return_value == -120
+ assert return_value == 12
 
 def test_divide_string():
- return_value = divide('58', 12)
+ return_value = divide(72, 12)
  print(type(return_value))
- assert return_value == 4.83
+ assert return_value == 6
