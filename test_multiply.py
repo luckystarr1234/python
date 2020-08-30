@@ -3,9 +3,6 @@ from advanced import multiply
 # DRY - Don't Repeat Yourself
 import pytest
 
-
-from add import add
-
 # DRY - Don't Repeat Yourself
 # Annotation
 

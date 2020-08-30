@@ -18,7 +18,6 @@ def add(a, b):
     return a + b
 
 
-
 def subtract(a, b):
     type1 = type(a)
     type2 = type(b)
